@@ -1,6 +1,6 @@
 {
   "name": "@inno76/univer-import-export",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Excel/CSV import and export library for Univer spreadsheets with full format preservation",
   "private": false,
   "publishConfig": {
