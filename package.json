@@ -46,14 +46,14 @@
     "xlsx",
     "xls"
   ],
-  "author": "mertdeveci",
-  "homepage": "https://github.com/mertdeveci/univerjs-import-export",
+  "author": "inno76tink",
+  "homepage": "https://github.com/inno76tink/univer-import-export",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mertdeveci/univerjs-import-export.git"
+    "url": "git+https://github.com/inno76tink/univer-import-export.git"
   },
   "bugs": {
-    "url": "https://github.com/mertdeveci/univerjs-import-export/issues"
+    "url": "https://github.com/inno76tink/univer-import-export/issues"
   },
   "license": "MIT",
   "devDependencies": {
