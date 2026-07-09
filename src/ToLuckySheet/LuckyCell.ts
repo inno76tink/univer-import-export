@@ -123,13 +123,15 @@ export class LuckySheetCelldata extends LuckySheetCelldataBase {
         if (s != null) {
             let sNum = parseInt(s);
             let cellXf = cellXfs[sNum];
-            let xfId = cellXf.attributeList.xfId;
+            if (cellXf == null) return cellValue;
+            let xfId = cellXf.attributeList?.xfId;
 
             let numFmtId, fontId, fillId, borderId;
             let horizontal, vertical, wrapText, textRotation, shrinkToFit, indent, applyProtection;
 
             if (xfId != null) {
                 let cellStyleXf = cellStyleXfs[parseInt(xfId)];
+                if (cellStyleXf == null) return cellValue;
                 let attrList = cellStyleXf.attributeList;
 
                 let applyNumberFormat = attrList.applyNumberFormat;

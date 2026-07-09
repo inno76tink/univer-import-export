@@ -126,12 +126,24 @@ export function getBackgroundByFill(fill: Element, styles: IStyleCollections): s
     let patternFills = fill.getInnerElements("patternFill");
     if (patternFills != null) {
         let patternFill = patternFills[0];
+        let patternType = patternFill.get("patternType") as string;
+
+        // patternType이 none이거나 없으면 배경색 없음
+        if (patternType == null || patternType === "none") {
+            return null;
+        }
+
         let fgColors = patternFill.getInnerElements("fgColor");
         let bgColors = patternFill.getInnerElements("bgColor");
         let fg, bg;
         if (fgColors != null) {
             let fgColor = fgColors[0];
             fg = getColor(fgColor, styles);
+        }
+
+        // solid 패턴은 fgColor만 사용
+        if (patternType === "solid") {
+            return fg ?? null;
         }
 
         if (bgColors != null) {

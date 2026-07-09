@@ -282,7 +282,7 @@ export class Element extends xmloperation {
     * @return Single attribute
     */
     get(name:string):string|number|boolean{
-        return this.attributeList[name];
+        return this.attributeList?.[name];
     }
 
     /**
@@ -418,6 +418,7 @@ function combineIndexedColor(indexedColorsInner:Element[], indexedColors:Iattrib
 
 //clrScheme:Element[]
 export function getColor(color:Element, styles:IStyleCollections , type:string="g"){
+    if (color == null) return null;
     let attrList = color.attributeList;
     let clrScheme = styles["clrScheme"] as Element[];
     let indexedColorsInner = styles["indexedColors"] as Element[];
