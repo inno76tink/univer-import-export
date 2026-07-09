@@ -35,21 +35,12 @@ echo -e "${GREEN}New version: ${NEW_VERSION}${NC}"
 # Git operations
 echo -e "${GREEN}🔧 Committing changes...${NC}"
 git add -A
-COMMIT_MESSAGE="Release v${NEW_VERSION}
-
-Changes:
-- Fixed XML parsing regex bug that failed on sheet names containing > characters
-- Sheets with >>> in names (like 'DCF>>>') are now properly parsed
-- Removed hardcoded sheet addition - now works for ANY file with > in sheet names
-- The regex now properly handles quoted attribute values containing special characters
-- This is the PROPER fix that works for all Excel files, not just specific ones
-
-🤖 Generated with automated publish script"
+COMMIT_MESSAGE="Release v${NEW_VERSION}"
 
 git commit -m "$COMMIT_MESSAGE"
 
 echo -e "${GREEN}📤 Pushing to GitHub...${NC}"
-git push origin master
+git push origin main
 
 # Publish to npm
 echo -e "${GREEN}🎉 Publishing to npm...${NC}"
